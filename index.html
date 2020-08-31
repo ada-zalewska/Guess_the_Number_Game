@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./global.css" />
+    <link rel="stylesheet" type="text/css" href="./mobile.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="(min-width: 761px)"
+      href="./tablet.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="(min-width: 1281px)"
+      href="./desktop.css"
+    />
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <h1>Guess the number!</h1>
+        <p>
+          Number will be always generated randomly from 1 to 100. You have 10
+          chances.<br />
+          After each try you will be informed if your number is too low or too
+          high.<br />Good luck!
+        </p>
+        <p id="output">Enter your guess:</p>
+        <input type="number" id="guessField" value="0" min="0" max="100" />
+        <p id="hits">Previous guesses:</p>
+      </div>
+      <button id="guessSubmit">Guess</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
