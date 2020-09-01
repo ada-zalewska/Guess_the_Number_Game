@@ -2,10 +2,11 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 let output = document.getElementById('output');
 let btn = document.getElementById('guessSubmit');
+let resetBtn = document.getElementById('resetBtn');
 let hits = document.getElementById('hits');
 let guessField = document.getElementById('guessField');
 
-let guessCount = 1;
+let guessCount = 0;
 
 function check() {
   let userGuess = document.getElementById('guessField').value;
@@ -24,12 +25,24 @@ function check() {
 function setGameOver() {
   if (guessCount == 10) {
     guessField.disabled = true;
-    btn.innerHTML = `Restart game`;
+    btn.disabled = true;
+    btn.classList.add('hide');
+    resetBtn.classList.remove('hide');
   }
+}
+
+function resetGame() {
+  let guessCount = 0;
+  let randomNumber = Math.floor(Math.random() * 100) + 1;
+  btn.disabled = false;
+  btn.classList.remove('hide');
+  resetBtn.classList.add('hide');
+  check();
 }
 
 btn.addEventListener('click', check);
 btn.addEventListener('click', setGameOver);
+resetBtn.addEventListener('click', resetGame);
 
 /*
 let guesses = document.getElementById('guesses');
