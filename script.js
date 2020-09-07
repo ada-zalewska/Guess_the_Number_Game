@@ -11,6 +11,9 @@ function check() {
   let userGuess = document.getElementById('guessField').value;
   if (userGuess == randomNumber) {
     output.innerHTML = `Congratulations! You got it! It was ${randomNumber}`;
+    guessField.disabled = true;
+    btn.classList.add('hide');
+    resetBtn.classList.remove('hide');
   } else if (userGuess < randomNumber) {
     output.innerHTML = `Your guess is too low. It is not ${userGuess}`;
   }
