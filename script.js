@@ -1,11 +1,10 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-
 let output = document.getElementById('output');
 let btn = document.getElementById('guessSubmit');
 let resetBtn = document.getElementById('resetBtn');
 let hits = document.getElementById('hits');
 let guessField = document.getElementById('guessField');
 
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 let guessCount = 0;
 
 function check() {
@@ -19,25 +18,25 @@ function check() {
     output.innerHTML = `Your guess is too high. It is not ${userGuess}`;
   }
   guessCount++;
-  hits.textContent += ' ' + userGuess + ' ';
+  hits.textContent += ' ' + userGuess + ' | ';
 }
 
 function setGameOver() {
   if (guessCount == 10) {
     guessField.disabled = true;
-    btn.disabled = true;
     btn.classList.add('hide');
     resetBtn.classList.remove('hide');
   }
 }
 
 function resetGame() {
-  let guessCount = 0;
-  let randomNumber = Math.floor(Math.random() * 100) + 1;
-  btn.disabled = false;
   btn.classList.remove('hide');
   resetBtn.classList.add('hide');
-  check();
+  guessField.disabled = false;
+  guessCount = 0;
+  randomNumber = Math.floor(Math.random() * 100) + 1;
+  hits.textContent = 'Previous guesses:' + '';
+  guessField.value = 0;
 }
 
 btn.addEventListener('click', check);
