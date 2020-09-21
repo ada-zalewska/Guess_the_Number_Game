@@ -67,3 +67,15 @@ p {
 .hide {
   display: none;
 }
+
+.rights {
+  color: #eeeeee3d;
+  text-align: center;
+  width: auto;
+  height: 50px;
+  background-color: #393e46;
+}
+
+.rights p {
+  font-size: 12px;
+}
